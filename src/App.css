@@ -24,7 +24,7 @@ h6 {
   height: auto;
   margin-top: 5.9rem;
 
-  border: solid .2rem lawngreen;
+  /* border: solid .2rem lawngreen; */
 }
 
 /* BARRA DE NAVEGACION */
@@ -46,7 +46,7 @@ nav {
   align-items: center;
   justify-content: center;
 
-  border: solid .2rem palevioletred;
+  /* border: solid .2rem palevioletred; */
 }
 
 .navMenuLink {
@@ -72,7 +72,7 @@ nav {
 
 .navMenuLink.active {
   font-size: 1rem;
-  border: 0.2rem solid rgb(248, 5, 45);
+  /* border: 0.2rem solid rgb(248, 5, 45); */
   /* text-shadow: 0 0 1rem #fff, 0 0 5rem #fff, 0 0 .10rem #f75456; */
   -webkit-text-fill-color: #f75456;
   background-color: #110101;
@@ -100,8 +100,8 @@ nav {
 
 .contentStartups {
   margin: auto;
-
-  border: solid .2rem red;
+  justify-content: center;
+  /* border: solid .2rem red; */
 }
 
 .contentStartups a {
@@ -112,6 +112,7 @@ nav {
   width: 18rem;
   display: inline-flex;
   margin: .5rem .7rem;
+  border-radius: 0.5rem;
 }
 
 .btn-primary {
