@@ -53,40 +53,11 @@ class Portfolio extends Component {
     )
         .then(response => response.json())
         .then(data => {this.setState({ updates: data.data }) });
+
+
     }
 
-    // componentWillMount(){
-      //   this.getChartData();
-      // }
-      //
-      // getChartData() {
-        //   //Ajax calls here
-        //   this.setState({
-          //     chartData: {
-            //       // updates.crecimiento
-            //       // updates.ventas_mes
-            //       labels: ['Myrna', 'Liz', 'Lexy', 'Karen', 'Chío'],
-            //       datasets: [{
-              //         label: 'Sleep time',
-              //         data: [2, 4, 2, 0, 7],
-              //         backgroundColor: ['turquoise', 'palegreen', 'lightcoral', 'orange', 'pink'],
-              //       }]
-              //     }
-              //   })
-              // }
-              // startupName = (update, startup) => {
-                //   console.log('fuera if', startup.id)
-                //
-                //   if(update.startup === startup.id) {
-                  //     let startup =
-                  //     console.log(startup, 'dentro de if')
-                  //     return startup.name;
-                  //   }
-                  // }
-                  //
-                  // keys(id).forEach(
-                    //   console.log(startup.id);
-                    // )
+
     render() {
       const { startups } = this.state;
       const { founders } = this.state;
@@ -113,17 +84,15 @@ class Portfolio extends Component {
                                       Ir al proyecto
                        </a>
                                   {
-                                      updates.map((update) => {
+                                      updates.map((update, index) => {
                                           if (update.startup === startup.id) {
-                                              console.log(update.fecha)
-                                              return <p>{update.crecimiento}</p>
+                                              // console.log(update.mes)
+                                              return <p key={index}>{update.crecimiento} {update.mes}</p>
                                           }
                                       })
                                   }
                                   <Chart
-                                  chartData = "1"
-                                  labels = "2"
-                                  data = "3"
+
                                   title="Crecimiento"
                                   legendPosition="bottom"
                                   />
