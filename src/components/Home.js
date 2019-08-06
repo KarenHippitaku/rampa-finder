@@ -59,12 +59,7 @@ render() {
 
             return (
               <div className="card" key={index}>
-                <img
-                className="imgProjects card-img-top"
-                src={startup.logo}
-                alt={startup.name}
-                title={startup.name}
-                />
+
               <div className="card-body">
                 <h5 className="card-title">{startup.name}</h5>
                 <p className="card-text">{startup.one_liner}</p>
