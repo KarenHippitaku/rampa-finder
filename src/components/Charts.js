@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Bar, Line, Pie } from 'react-chartjs-2';
+import { Bar, Pie } from 'react-chartjs-2';
 // import Chart from './nodemodules/chartjs/dist/Chart.bundle.js';
 // dist/Chart.bundle.min.js
 // import '.nodemodules/chartjs/dist/Chart.min.css';
@@ -9,12 +9,12 @@ class Chart extends Component {
     super(props) //it marks props as not defined when it doesn't appear in both constructor and super
     this.state = {
       chartData:{
-        labels: [this.props.chartData],
-        dataset: [
+        labels: ['Febrero', 'Marzo', 'Abril', 'Mayo'],
+        datasets: [
           {
-            label: 'Update',
-            data: [this.props.crecimiento],
-            backgroundColor: ['turquoise', 'palegreen', 'lightcoral', 'orange', 'pink']
+
+            data: [20, 10, 20, 40],
+            backgroundColor: ['turquoise', 'palegreen', 'lightcoral', 'pink']
           }
         ],
       }
@@ -45,7 +45,7 @@ class Chart extends Component {
       <Bar
         data = {this.state.chartData}
         width = {100}
-        height = {50}
+        height = {70}
         options = {{
           responsive: true,
           title: { //This should also be an object with the option requirements
