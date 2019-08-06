@@ -94,79 +94,45 @@ class Portfolio extends Component {
         return (
             <Fragment>
                 <div className="contentStartups">
-                    <p>Componente para mostrar solo las startups que ya tengan en su portafolio</p>
-                    {startups.map((startup, index) => {
-                      if (startup.startup_status  === 'Seguimiento') {
-
-                        return (
+                {
+                  this.state.startups.map((startup, index) => {
+                      return (
                           <div className="card" key={index}>
-                            <img
-                            className="imgProjects card-img-top"
-                            src={startup.logo}
-                            alt={startup.name}
-                            title={startup.name}
-                            />
-                          <div className="card-body">
-                            <h5 className="card-title">{startup.name}</h5>
-                            <p className="card-text">{startup.one_liner}</p>
-                            <p className="card-text">{startup.website}</p>
-                            <p className="card-text">{startup.startup_status}</p>
-                            <a
-                            href={startup.linkProject}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            >
-                            Ir al proyecto
-                            </a>
-                            <a
-                            href={startup.linkReadme}
-                            rel="noopener noreferrer"
-                            target="_blank"
-                            >
-                            Ver más detalles del proyecto
-                            </a>
-                            <a href="#" className="btn btn-primary">Go somewhere</a>
-                          </div>
-                        </div>
-                      )
-                    }
-                  })}
+                              <div className="card-body">
+                                  <h5 className="card-title">{startup.name}</h5>
+                                  <p className="card-text">{startup.one_liner}</p>
+                                  <a href={startup.website} target="_blank"><p className="card-text">{startup.
+                                  website}</p></a>
+                                  <p className="card-text">{startup.startup_status}</p>
 
-                    {updates.map((update, index) => {
-                   if (update.crecimiento !== 'null') {
-                       return (
-                           <div className="card" key={index}>
-                               <div className="card-body">
-                                  <p className="card-text">{update.startup}</p>
-                                   <h5 className="card-title">{update.crecimiento}</h5>
-                                   <p className="card-text">{update.mes}</p>
-                                   <p className="card-text">{update.fecha}</p>
-                                   <a
-                                       href={update.fecha}
-                                       rel="noopener noreferrer"
-                                       target="_blank"
-                                   >
-                                   </a>
-                                   <a
-                                       href={update.mes}
-                                       rel="noopener noreferrer"
-                                       target="_blank"
-                                   >
-                                       Ver más detalles del proyecto
-                                  </a>
-                                   <a href="#" className="btn btn-primary">Go somewhere</a>
-                               </div>
-                               <Chart
-                               chartData = "1"
-                               labels = "2"
-                               data = "3"
-                               title="Crecimiento"
-                               legendPosition="bottom"
-                               />
-                           </div>
-                       )
-                   }
-               })}
+                                  <a
+                                      href="#"
+                                      rel="noopener noreferrer"
+                                      target="_blank"
+                                  >
+                                      Ir al proyecto
+                       </a>
+                                  {
+                                      updates.map((update) => {
+                                          if (update.startup === startup.id) {
+                                              console.log(update.fecha)
+                                              return <p>{update.crecimiento}</p>
+                                          }
+                                      })
+                                  }
+                                  <Chart
+                                  chartData = "1"
+                                  labels = "2"
+                                  data = "3"
+                                  title="Crecimiento"
+                                  legendPosition="bottom"
+                                  />
+                                  <a href="#" className="btn btn-primary">Go somewhere</a>
+                              </div>
+                          </div>
+                      )
+                  })
+              }
 
                 </div>
             </Fragment>
